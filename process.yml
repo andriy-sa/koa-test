@@ -1,0 +1,7 @@
+apps:
+  - script: server.js
+    name: connections-api
+  - script: tasks/cron.js
+    name: connections-cron
+  - script: tasks/queue.js
+    name: connections-queue

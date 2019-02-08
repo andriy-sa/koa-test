@@ -1,0 +1,70 @@
+{
+  "name": "koa-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "@octokit/rest": "^16.15.0",
+    "@sendgrid/mail": "^6.3.1",
+    "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.1",
+    "bookshelf": "^0.13.3",
+    "bookshelf-mask": "^2.0.1",
+    "bull": "^3.4.8",
+    "cron": "^1.4.1",
+    "dotenv": "^6.0.0",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-reqlog": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
+    "mysql": "^2.16.0",
+    "performance-now": "^2.1.0",
+    "pug": "^2.0.3",
+    "stripe": "^6.8.0",
+    "swagger-jsdoc": "^1.10.3",
+    "swagger-parser": "^5.0.5",
+    "swagger-tools": "^0.10.4",
+    "validatorjs": "^3.14.2",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "supertest": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": "500",
+    "watch": [
+      "config/",
+      "resources/",
+      "libs/",
+      "middlewares/",
+      "models/",
+      "routes/",
+      "server.js"
+    ],
+    "ext": "js,pug"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/nodemon server.js",
+    "test": "TEST_MODE=true LOG_ENABLED=false mocha --timeout 5000 --exit",
+    "ci-lint": "./node_modules/.bin/eslint .",
+    "precommit": "./node_modules/.bin/eslint . --fix"
+  },
+  "author": "SelectoTeam",
+  "license": "MIT"
+}
